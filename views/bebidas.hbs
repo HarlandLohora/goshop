@@ -1,0 +1,29 @@
+<h1>Nuestros productos...</h1>
+
+<style>
+    .max-img{
+        width: 10vw;
+        height: 20vh;
+
+    }
+</style>
+
+ <div class="row">
+    
+     {{#each todasLasBebidas}}
+     <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                    <img src={{url}} class="card-img-top max-img" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{nombre}}</h3>
+                        <p class="card-text">{{descripcion}}</p>
+                        <span class="badge text-bg-warning">${{precio}}</span>
+                        <span class="badge text-bg-primary"><i class="bi bi-archive"></i> {{cantidad}}</span>
+                    </div>
+                    <a href="/bebidas/{{_id}}" class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary"><i class="bi bi-eye-fill"></i> Detalle</button>
+                    </a>
+            </div>
+        </div>
+     {{/each}}
+  </div>

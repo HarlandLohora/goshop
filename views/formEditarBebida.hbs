@@ -1,0 +1,96 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Editar bebida</li>
+  </ol>
+</nav>
+
+<p class="h2">Editar bebida</p>
+<!--POST, para que los datos vayan en el (body) del request-->
+<form action="/bebidas/actualizar/{{_id}}" method="post">
+    <div class="row my-3">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required value="{{nombre}}">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Url" name="url" required value="{{ url }}">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descripcion" name="descripcion" required>{{descripcion}}</textarea>
+        </div>
+    </div>
+
+    <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" name="precio" required value="{{precio}}">
+            <span class="input-group-text">.00</span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <span class="input-group-text">Cantidad</span>
+            <input type="range" class="form-range" min="0" max="10" id="customRange2" name="cantidad" value="{{cantidad}}">
+        </div>
+        <div class="col">
+            <div class="form-check">
+               
+                {{#if agua}}
+                   <input class="form-check-input" type="checkbox"  id="agua" name="agua" checked>
+                {{else}}
+                   <input class="form-check-input" type="checkbox"  id="agua" name="agua">
+                {{/if}}
+                <label class="form-check-label" for="agua">
+                    Agua
+                </label>
+            </div>
+            <div class="form-check">
+                {{#if alcohol}}
+                 <input class="form-check-input" type="checkbox" value="" id="alcohol" name="alcohol" checked>
+                {{else}}
+                 <input class="form-check-input" type="checkbox" value="" id="alcohol" name="alcohol">
+                {{/if}}
+                <label class="form-check-label" for="alcohol">
+                    Alcohol
+                </label>
+            </div>
+            <div class="form-check">
+                {{#if azucar}}
+                <input class="form-check-input" type="checkbox" value="" id="azucar" name="azucar" checked>
+                {{else}}
+                <input class="form-check-input" type="checkbox" value="" id="azucar" name="azucar">
+                {{/if}}
+                <label class="form-check-label" for="azucar">
+                    Azucar
+                </label>
+            </div>
+            <div class="form-check">
+                {{#if cebada}}
+                   <input class="form-check-input" type="checkbox" value="" id="cebada" name="cebada" checked>
+                {{else}}
+                    <input class="form-check-input" type="checkbox" value="" id="cebada" name="cebada">
+                {{/if}}
+                <label class="form-check-label" for="cebada">
+                    Cebada
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <select class="form-select" id="tipo" name="tipo" required value={{ tipo }}>
+            <option value="cerveza">Cerveza</option>
+            <option value="vodka">Vodka</option>
+            <option value="tequila">Tequila</option>
+            <option value="ron">Ron</option>
+            <option value="sodas">Sodas</option>
+            <option value="sugar free">Sugar free</option>
+            <option value="jugos" selected>Jugos</option>
+            <option value="tes">Tes</option>
+        </select>
+    </div>
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Guardar</button>
+    </div>
+
+</form>

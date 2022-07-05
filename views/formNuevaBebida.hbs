@@ -1,0 +1,79 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Nueva bebida</li>
+  </ol>
+</nav>
+
+<p class="h2">Registrar nueva bebida</p>
+<!--POST, para que los datos vayan en el (body) del request-->
+<form action="/bebidas/nueva" method="post">
+    <div class="row my-3">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Url" name="url" required>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descripcion" name="descripcion" required></textarea>
+        </div>
+    </div>
+
+    <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" name="precio" required>
+            <span class="input-group-text">.00</span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <span class="input-group-text">Cantidad</span>
+            <input type="range" class="form-range" min="0" max="10" id="customRange2" name="cantidad">
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="agua" name="agua">
+                <label class="form-check-label" for="agua">
+                    Agua
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="alcohol" name="alcohol">
+                <label class="form-check-label" for="alcohol">
+                    Alcohol
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="azucar" name="azucar">
+                <label class="form-check-label" for="azucar">
+                    Azucar
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="cebada" name="cebada">
+                <label class="form-check-label" for="cebada">
+                    Cebada
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row my-3">
+        <select class="form-select" id="tipo" name="tipo" required>
+            <option selected>Tipo...</option>
+            <option value="cerveza">Cerveza</option>
+            <option value="vodka">Vodka</option>
+            <option value="tequila">Tequila</option>
+            <option value="ron">Ron</option>
+            <option value="sodas">Sodas</option>
+            <option value="sugar free">Sugar free</option>
+            <option value="jugos">Jugos</option>
+            <option value="tes">Tes</option>
+        </select>
+    </div>
+    <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Guardar</button>
+    </div>
+</form>
