@@ -7,11 +7,13 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "bootstrap-icons": "^1.8.3",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "hbs": "^4.2.0",
+    "moment": "^2.29.4",
     "mongoose": "^6.4.2",
     "morgan": "^1.10.0",
     "serve-favicon": "^2.5.0"

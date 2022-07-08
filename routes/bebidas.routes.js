@@ -6,8 +6,18 @@ const Bebida = require("../models/Bebida.model")
 router.get("/", (req, res) => {
     //Obtener los datos de la DB
     Bebida.find().then(todasLasBebidas => {
-        console.log(todasLasBebidas)
-        res.render("bebidas", { todasLasBebidas })
+
+        const bebidasVerificadas = todasLasBebidas.map((bebida) => {
+            if (bebida.cantidad === 0) {
+                const cpBebida = { ...bebida._doc }
+                cpBebida.disponible = true
+                return cpBebida
+            }
+            return bebida
+        })
+
+        console.log(bebidasVerificadas)
+        res.render("bebidas", { todasLasBebidas: bebidasVerificadas })
     }).catch(console.log)
 })
 
@@ -112,3 +122,4 @@ router.post("/actualizar/:id", (req, res) => {
 
 
 module.exports = router
+
