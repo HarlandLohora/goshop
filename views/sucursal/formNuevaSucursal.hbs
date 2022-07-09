@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    .container-registro{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+    }
+    .container-registro-img{
+        width: 70vw;
+        height: 100vh;
+        background-image: url("https://d5y9g7a5.rocketcdn.me/wp-content/uploads/2019/05/mapa-do-mundo-63-versoes-que-voce-nao-aprende-na-escola-46.jpg");
+    }
+    .container-registro-form{
+        width: 30vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    form{
+        width: 80%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .copy{
+        color: #333;
+        margin-top: 12px; 
+        text-align: center;
+    }
+</style>
+
+<div class="container-registro">
+    <div class="container-registro-img"></div>
+    <div class="container-registro-form">
+        <form action="/sucursal/nueva" method="post">
+            <h2>Registrar Sucursal</h2>
+            <div class="mb-3">
+                <input name="nombre" type="text" class="form-control" placeholder="Nombre sucursal" required minlength="4" value="Mr Pampas do Brasil">
+            </div>
+            <div class="mb-3">
+                <input name="direccion" type="text" class="form-control" placeholder="Direccion" required minlength="4" value="En la playita">
+            </div>
+            <div class="mb-3">
+                <input name="empleados" type="number" class="form-control" placeholder="Empleados" required value="1">
+            </div>
+            <div class="mb-3">
+                <input name="lat" type="number" class="form-control" placeholder="Latitud" required value="31.8552648">
+            </div>
+            <div class="mb-3">
+                <input name="lng" type="number" class="form-control" placeholder="Longitud" required value="-116.6025589">
+            </div>
+            {{#if checkInfo}}
+                <div class="alert alert-danger d-flex align-items-center" role="alert"> 
+                    <div>
+                    <i class="bi bi-exclamation-octagon-fill"></i> {{textError}}
+                    </div>
+                </div>
+            {{/if}}
+
+             <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+            <p class="copy">GoShop © 2022</p>
+        </form>
+    </div>
+</div>

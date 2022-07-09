@@ -1,0 +1,20 @@
+
+<div class="row">
+
+
+  {{#each sucursales}}
+  <div class="col-4">
+    <a href="/sucursal/{{_id}}">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Nombre: {{nombre}}</h5>
+          <p class="card-text">Direccion: {{direccion}}</p>
+          <p class="card-text">#Empleados: {{empleados}}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  {{/each}}
+
+</div>

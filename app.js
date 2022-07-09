@@ -71,6 +71,10 @@ app.use("/prov", provs)
 const admins = require("./routes/admin.routes")
 app.use("/admin", admins)
 
+//Registrar mi sistema de rutas de sucursal
+const sucursales = require("./routes/sucursal.routes")
+app.use("/sucursal", sucursales)
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
